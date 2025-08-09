@@ -2,20 +2,17 @@ import { motion } from "framer-motion";
 import LoadingOverlay from "@/components/loading-overlay";
 import ParticleSystem from "@/components/particle-system";
 import HeroSection from "@/components/hero-section";
-import MagicElements from "@/components/magic-elements";
+import AdaptiveBackground from "@/components/adaptive-background";
+import CursorTrail from "@/components/cursor-trail";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-dark-bg text-white font-inter overflow-x-hidden">
       <LoadingOverlay />
 
-      {/* Background with overlay effects */}
-      <div className="fixed inset-0 z-0">
-        <div className="absolute inset-0 bg-dark-bg" />
-        <div className="absolute inset-0 bg-gradient-to-br from-dark-bg via-dark-bg to-gray-900" />
-      </div>
-
+      <AdaptiveBackground />
       <ParticleSystem />
+      <CursorTrail />
 
       {/* Main Content */}
       <div className="relative z-20 min-h-screen flex flex-col">

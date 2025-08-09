@@ -219,4 +219,19 @@
   .animate-magic-pulse {
     animation: magicPulse 4s ease-in-out infinite;
   }
+  
+  /* Custom cursor for magical feel */
+  * {
+    cursor: none !important;
+  }
+  
+  /* Hide default cursor completely */
+  html, body {
+    cursor: none !important;
+  }
+  
+  /* Special cursor for interactive elements */
+  button, a, [role="button"], input, textarea {
+    cursor: none !important;
+  }
 }
