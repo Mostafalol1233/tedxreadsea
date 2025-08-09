@@ -94,14 +94,12 @@ export default function HeroSection() {
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
               whileHover={{ scale: 1.05 }}
             >
-              <div className="w-32 h-32 md:w-40 md:h-40 bg-gradient-to-br from-tedx-red to-red-700 rounded-2xl flex items-center justify-center">
-                <div className="text-white text-center">
-                  <div className="text-2xl md:text-3xl font-black">TEDx</div>
-                  <div className="text-xs md:text-sm font-medium mt-1">
-                    Red Sea STEM
-                  </div>
-                  <div className="text-xs font-medium">Youth</div>
-                </div>
+              <div className="w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden flex items-center justify-center bg-black/20">
+                <img 
+                  src="/attached_assets/image_1754700248319.png"
+                  alt="TEDx Red Sea STEM School Youth Logo"
+                  className="w-full h-full object-contain p-2"
+                />
               </div>
             </motion.div>
           </motion.div>

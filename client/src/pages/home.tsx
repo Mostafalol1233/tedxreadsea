@@ -11,13 +11,13 @@ export default function Home() {
       {/* Background with overlay effects */}
       <div className="fixed inset-0 z-0">
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080')`,
+            backgroundImage: `url('/attached_assets/image_1754700180189.png')`,
           }}
           data-testid="background-image"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-dark-bg via-transparent to-tedx-red opacity-80" />
+        <div className="absolute inset-0 bg-gradient-to-br from-dark-bg/70 via-transparent to-tedx-red/30 opacity-90" />
         <div className="absolute inset-0 bg-geometric" />
       </div>
 
