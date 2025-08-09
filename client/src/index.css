@@ -85,7 +85,20 @@
   }
   
   .bg-geometric {
-    background-image: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23E62B1E" fill-opacity="0.05"><polygon points="30 0 60 30 30 60 0 30"/></g></svg>');
+    background-image: 
+      url('data:image/svg+xml,<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="%23E62B1E" stroke-width="0.5" opacity="0.3"><circle cx="60" cy="60" r="30" fill="none"/><path d="M30,60 L90,60 M60,30 L60,90" stroke-width="0.3"/><polygon points="45,45 75,45 75,75 45,75" fill="none" stroke-width="0.2"/></g></svg>'),
+      url('data:image/svg+xml,<svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><g fill="%23E62B1E" opacity="0.1"><polygon points="40,10 70,40 40,70 10,40"/></g></svg>'),
+      url('data:image/svg+xml,<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="%23E62B1E" stroke-width="1" opacity="0.2"><path d="M50,50 Q100,20 150,50 Q180,100 150,150 Q100,180 50,150 Q20,100 50,50" fill="none"/><circle cx="100" cy="100" r="5" fill="%23E62B1E" opacity="0.4"/></g></svg>');
+    background-size: 120px 120px, 80px 80px, 200px 200px;
+    background-position: 0 0, 60px 60px, 100px 100px;
+  }
+  
+  .tedx-pattern {
+    background-image: 
+      url('data:image/svg+xml,<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="%23E62B1E" stroke-width="2" opacity="0.15"><path d="M50,150 L100,100 L150,150 L200,100 L250,150" fill="none"/><path d="M75,50 Q150,100 225,50" fill="none"/><path d="M75,250 Q150,200 225,250" fill="none"/><circle cx="150" cy="150" r="80" fill="none" stroke-width="1" opacity="0.1"/><polygon points="120,120 180,120 150,180" fill="%23E62B1E" opacity="0.05"/></g></svg>');
+    background-size: 300px 300px;
+    background-position: center;
+    background-repeat: repeat;
   }
   
   .particle {
