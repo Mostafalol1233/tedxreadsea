@@ -50,7 +50,7 @@ export default function AdaptiveBackground() {
     };
 
     updateTheme();
-    const interval = setInterval(updateTheme, 10000); // Update every 10 seconds for testing
+    const interval = setInterval(updateTheme, 60000); // Update every minute
     
     return () => clearInterval(interval);
   }, []);
@@ -235,9 +235,9 @@ export default function AdaptiveBackground() {
         </motion.div>
       </div>
 
-      {/* Time indicator */}
-      <div className="absolute top-4 left-4 text-white/30 text-sm" data-testid="time-indicator">
-        {currentTheme.mood} mode • {new Date().getHours()}:00
+      {/* Time indicator - hidden by default */}
+      <div className="absolute bottom-4 right-4 text-white/10 text-xs opacity-0 hover:opacity-100 transition-opacity" data-testid="time-indicator">
+        {currentTheme.mood} mode
       </div>
 
       {/* Floating Sparkles */}
