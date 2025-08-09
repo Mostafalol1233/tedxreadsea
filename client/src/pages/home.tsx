@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import LoadingOverlay from "@/components/loading-overlay";
 import ParticleSystem from "@/components/particle-system";
 import HeroSection from "@/components/hero-section";
+import MagicElements from "@/components/magic-elements";
 
 export default function Home() {
   return (
@@ -13,10 +14,12 @@ export default function Home() {
         <div className="absolute inset-0 bg-dark-bg" />
         <div className="absolute inset-0 tedx-pattern" />
         <div className="absolute inset-0 bg-geometric" />
-        <div className="absolute inset-0 bg-gradient-to-br from-dark-bg/50 via-transparent to-tedx-red/20" />
+        <div className="absolute inset-0 magic-overlay" />
+        <div className="absolute inset-0 bg-gradient-to-br from-dark-bg/40 via-transparent to-tedx-red/15" />
       </div>
 
       <ParticleSystem />
+      <MagicElements />
 
       {/* Main Content */}
       <div className="relative z-20 min-h-screen flex flex-col">
