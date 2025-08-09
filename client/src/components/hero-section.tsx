@@ -96,7 +96,7 @@ export default function HeroSection() {
             >
               <div className="w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden flex items-center justify-center bg-black/20">
                 <img 
-                  src="/attached_assets/image_1754700248319.png"
+                  src="/assets/logo.png"
                   alt="TEDx Red Sea STEM School Youth Logo"
                   className="w-full h-full object-contain p-2"
                 />

@@ -11,9 +11,9 @@ export default function Home() {
       {/* Background with overlay effects */}
       <div className="fixed inset-0 z-0">
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-70"
           style={{
-            backgroundImage: `url('/attached_assets/image_1754700180189.png')`,
+            backgroundImage: `url('/assets/background.png')`,
           }}
           data-testid="background-image"
         />
