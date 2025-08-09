@@ -90,9 +90,20 @@ export default function Home() {
               <p className="text-gray-400 mb-2">
                 © 2024 TEDx Youth STEM Red Sea. Independently organized TED event.
               </p>
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-gray-500 mb-3">
                 Designed for inspiring the next generation of innovators
               </p>
+              <motion.a
+                href="https://ktr.ee/Mustafa_Bemo"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-tedx-red hover:text-red-400 transition-colors duration-300 text-sm font-medium"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                data-testid="creator-link"
+              >
+                Made with ❤️ by Mustafa Bemo
+              </motion.a>
             </motion.div>
           </div>
         </motion.footer>

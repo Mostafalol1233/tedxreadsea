@@ -27,9 +27,9 @@ export default function SocialButton({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`glass-card social-button rounded-xl p-6 text-center group ${
-        featured ? "w-full max-w-md" : ""
-      }`}
+      className={`glass-card social-button rounded-xl ${
+        featured ? "p-8 w-full max-w-lg" : "p-8"
+      } text-center group min-h-[120px] flex flex-col justify-center`}
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay, duration: 0.6, ease: "easeOut" }}
@@ -42,14 +42,14 @@ export default function SocialButton({
       data-testid={testId}
     >
       <motion.div
-        className={`text-${featured ? "4xl" : "3xl"} mb-3 ${colorClass} transition-colors`}
+        className={`text-${featured ? "5xl" : "4xl"} mb-4 ${colorClass} transition-colors`}
         whileHover={{ scale: 1.1 }}
         transition={{ duration: 0.2 }}
       >
         {icon}
       </motion.div>
-      <p className={`font-semibold ${featured ? "text-lg" : ""}`}>{title}</p>
-      <p className="text-sm text-gray-400">{description}</p>
+      <p className={`font-bold ${featured ? "text-xl" : "text-lg"}`}>{title}</p>
+      <p className={`${featured ? "text-base" : "text-sm"} text-gray-400 mt-2`}>{description}</p>
     </motion.a>
   );
 }

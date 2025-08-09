@@ -1,6 +1,15 @@
 # Overview
 
-This is a full-stack web application for TEDx Youth STEM Red Sea, built as a community platform for STEM education and inspiring talks. The application features a modern, animated frontend with a glass morphism design aesthetic, combining React with motion animations to create an engaging user experience. The backend is structured as a REST API using Express.js with database integration capabilities.
+This is a premium single-page social media showcase for TEDx Youth STEM Red Sea, optimized for Vercel deployment. The application features a stunning animated frontend with glass morphism design, custom TEDx branding, and seamless social media integration. Built as a modern portfolio site showcasing TEDx Youth STEM Red Sea's online presence with clean design and professional presentation.
+
+## Recent Changes (August 2025)
+- Converted to single-page showcase with simplified architecture
+- Implemented custom CSS patterns for artistic background (red geometric shapes)
+- Integrated user-provided TEDx logos and branding assets
+- Enhanced social media buttons with larger sizes and improved UX
+- Prepared for Vercel deployment with optimized build configuration
+- Removed Replit-specific scripts for clean production deployment
+- Added creator attribution link in footer
 
 # User Preferences
 

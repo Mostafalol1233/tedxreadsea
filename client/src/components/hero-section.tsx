@@ -105,7 +105,7 @@ export default function HeroSection() {
           </motion.div>
 
           {/* Social Media Grid */}
-          <div className="grid grid-cols-2 gap-4 w-full max-w-md">
+          <div className="grid grid-cols-2 gap-6 w-full max-w-2xl">
             <SocialButton
               href="https://www.instagram.com/tedx_youth_stem_red_sea?igsh=MXZua3VwNDZrb3Fkbg=="
               icon={<i className="fab fa-instagram" />}
