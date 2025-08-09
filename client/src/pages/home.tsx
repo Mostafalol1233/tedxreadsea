@@ -12,14 +12,10 @@ export default function Home() {
       {/* Background with overlay effects */}
       <div className="fixed inset-0 z-0">
         <div className="absolute inset-0 bg-dark-bg" />
-        <div className="absolute inset-0 tedx-pattern" />
-        <div className="absolute inset-0 bg-geometric" />
-        <div className="absolute inset-0 magic-overlay" />
-        <div className="absolute inset-0 bg-gradient-to-br from-dark-bg/40 via-transparent to-tedx-red/15" />
+        <div className="absolute inset-0 bg-gradient-to-br from-dark-bg via-dark-bg to-gray-900" />
       </div>
 
       <ParticleSystem />
-      <MagicElements />
 
       {/* Main Content */}
       <div className="relative z-20 min-h-screen flex flex-col">
