@@ -64,41 +64,38 @@ export default function AdaptiveBackground() {
       }}
       transition={{ duration: 2, ease: "easeInOut" }}
     >
-      {/* Magic Hat Background Design */}
-      <div className="absolute inset-0 flex items-center justify-center opacity-20">
+      {/* Magic Hat Background Design - Exact recreation with subtle lighting */}
+      <div className="absolute inset-0 flex items-center justify-center opacity-30">
         <motion.div
           className="relative"
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.5, delay: 0.5 }}
         >
-          {/* Magic Hat SVG */}
-          <svg width="300" height="400" viewBox="0 0 300 400" fill="none">
-            {/* Hat Base */}
-            <ellipse cx="150" cy="350" rx="120" ry="30" fill="rgba(0, 0, 0, 0.6)" />
+          <svg width="400" height="500" viewBox="0 0 400 500" fill="none">
+            {/* Shadow base */}
+            <ellipse cx="200" cy="450" rx="150" ry="25" fill="rgba(0, 0, 0, 0.2)" />
             
-            {/* Hat Body */}
-            <path
-              d="M60 350 L60 250 Q60 220 90 220 L210 220 Q240 220 240 250 L240 350 Z"
-              fill="url(#hatGradient)"
-              stroke="rgba(230, 43, 30, 0.3)"
-              strokeWidth="2"
-            />
+            {/* Hat base/brim */}
+            <ellipse cx="200" cy="420" rx="170" ry="25" fill="url(#hatBrimGradient)" />
+            <ellipse cx="200" cy="415" rx="170" ry="25" fill="url(#hatBrimTopGradient)" />
             
-            {/* Hat Brim */}
-            <ellipse cx="150" cy="350" rx="140" ry="20" fill="rgba(139, 69, 19, 0.7)" />
-            <ellipse cx="150" cy="345" rx="140" ry="20" fill="rgba(160, 82, 45, 0.8)" />
+            {/* Hat body/cylinder */}
+            <rect x="80" y="280" width="240" height="140" rx="10" fill="url(#hatBodyGradient)" />
             
-            {/* Magic Text */}
-            <text x="150" y="300" textAnchor="middle" fill="url(#textGradient)" fontSize="24" fontFamily="serif" fontStyle="italic">
+            {/* Hat body outline */}
+            <rect x="80" y="280" width="240" height="140" rx="10" fill="none" stroke="rgba(139, 69, 19, 0.3)" strokeWidth="1" />
+            
+            {/* Magic text "Maginity" */}
+            <text x="200" y="360" textAnchor="middle" fill="url(#magicTextGradient)" fontSize="28" fontFamily="serif" fontStyle="italic" fontWeight="bold">
               Maginity
             </text>
             
-            {/* Rabbit Ears emerging */}
+            {/* Central subtle star/light */}
             <motion.g
               animate={{
-                y: [-10, 0, -10],
-                opacity: [0.6, 1, 0.6]
+                opacity: [0.3, 0.5, 0.3],
+                scale: [0.95, 1.05, 0.95]
               }}
               transition={{
                 duration: 3,
@@ -106,59 +103,132 @@ export default function AdaptiveBackground() {
                 ease: "easeInOut"
               }}
             >
-              <ellipse cx="130" cy="180" rx="8" ry="40" fill="rgba(255, 248, 220, 0.8)" stroke="rgba(230, 43, 30, 0.4)" strokeWidth="1" />
-              <ellipse cx="170" cy="180" rx="8" ry="40" fill="rgba(255, 248, 220, 0.8)" stroke="rgba(230, 43, 30, 0.4)" strokeWidth="1" />
-              <ellipse cx="130" cy="185" rx="4" ry="35" fill="rgba(255, 192, 203, 0.6)" />
-              <ellipse cx="170" cy="185" rx="4" ry="35" fill="rgba(255, 192, 203, 0.6)" />
+              {/* Main star rays - much more subtle */}
+              <path d="M200 140 L205 180 L200 220 L195 180 Z" fill="url(#starRayGradientSubtle)" />
+              <path d="M160 200 L200 195 L240 200 L200 205 Z" fill="url(#starRayGradientSubtle)" />
+              <path d="M175 160 L200 185 L225 160 L200 175 Z" fill="url(#starRayGradientSubtle)" />
+              <path d="M175 240 L200 215 L225 240 L200 225 Z" fill="url(#starRayGradientSubtle)" />
+              
+              {/* Central very subtle core */}
+              <circle cx="200" cy="200" r="4" fill="rgba(255, 255, 255, 0.4)" />
+              <circle cx="200" cy="200" r="8" fill="rgba(255, 215, 0, 0.3)" />
             </motion.g>
             
-            {/* Magic Stars */}
+            {/* Rabbit ears emerging from hat with gentle animation */}
             <motion.g
               animate={{
-                rotate: [0, 360],
-              }}
-              transition={{
-                duration: 20,
-                repeat: Infinity,
-                ease: "linear"
-              }}
-            >
-              <path d="M150 120 L155 135 L170 135 L158 145 L163 160 L150 150 L137 160 L142 145 L130 135 L145 135 Z" fill="rgba(255, 215, 0, 0.8)" />
-            </motion.g>
-            
-            {/* Infinity Symbol */}
-            <motion.path
-              d="M100 380 Q125 360 150 380 Q175 400 200 380 Q175 360 150 380 Q125 400 100 380"
-              fill="none"
-              stroke="url(#infinityGradient)"
-              strokeWidth="3"
-              animate={{
-                opacity: [0.4, 0.8, 0.4],
+                y: [-8, 2, -8],
+                opacity: [0.7, 0.9, 0.7]
               }}
               transition={{
                 duration: 4,
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
+            >
+              {/* Left ear */}
+              <ellipse cx="175" cy="240" rx="12" ry="50" fill="rgba(255, 248, 220, 0.8)" stroke="rgba(230, 43, 30, 0.2)" strokeWidth="1" />
+              <ellipse cx="175" cy="245" rx="6" ry="45" fill="rgba(255, 192, 203, 0.4)" />
+              
+              {/* Right ear */}
+              <ellipse cx="225" cy="240" rx="12" ry="50" fill="rgba(255, 248, 220, 0.8)" stroke="rgba(230, 43, 30, 0.2)" strokeWidth="1" />
+              <ellipse cx="225" cy="245" rx="6" ry="45" fill="rgba(255, 192, 203, 0.4)" />
+            </motion.g>
+            
+            {/* Infinity symbol at bottom with subtle glow */}
+            <motion.path
+              d="M120 470 Q150 450 200 470 Q250 490 280 470 Q250 450 200 470 Q150 490 120 470"
+              fill="none"
+              stroke="url(#infinityGradientSubtle)"
+              strokeWidth="4"
+              animate={{
+                opacity: [0.3, 0.6, 0.3],
+              }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+            
+            {/* Subtle sparkles around */}
+            <motion.circle
+              cx="120" cy="150" r="2"
+              fill="rgba(255, 215, 0, 0.4)"
+              animate={{
+                opacity: [0.2, 0.6, 0.2],
+                scale: [0.5, 1, 0.5]
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 0
+              }}
+            />
+            <motion.circle
+              cx="300" cy="180" r="1.5"
+              fill="rgba(255, 215, 0, 0.4)"
+              animate={{
+                opacity: [0.2, 0.6, 0.2],
+                scale: [0.5, 1, 0.5]
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 1
+              }}
+            />
+            <motion.circle
+              cx="340" cy="300" r="2"
+              fill="rgba(255, 215, 0, 0.4)"
+              animate={{
+                opacity: [0.2, 0.6, 0.2],
+                scale: [0.5, 1, 0.5]
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 2
+              }}
             />
             
             <defs>
-              <linearGradient id="hatGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="rgba(0, 0, 0, 0.8)" />
-                <stop offset="50%" stopColor="rgba(139, 69, 19, 0.6)" />
-                <stop offset="100%" stopColor="rgba(0, 0, 0, 0.9)" />
+              <radialGradient id="hatBrimGradient" cx="50%" cy="30%" r="70%">
+                <stop offset="0%" stopColor="rgba(139, 69, 19, 0.6)" />
+                <stop offset="100%" stopColor="rgba(101, 67, 33, 0.8)" />
+              </radialGradient>
+              
+              <radialGradient id="hatBrimTopGradient" cx="50%" cy="20%" r="60%">
+                <stop offset="0%" stopColor="rgba(160, 82, 45, 0.5)" />
+                <stop offset="100%" stopColor="rgba(139, 69, 19, 0.7)" />
+              </radialGradient>
+              
+              <linearGradient id="hatBodyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="rgba(20, 20, 20, 0.9)" />
+                <stop offset="30%" stopColor="rgba(50, 25, 25, 0.8)" />
+                <stop offset="70%" stopColor="rgba(30, 30, 30, 0.9)" />
+                <stop offset="100%" stopColor="rgba(10, 10, 10, 0.95)" />
               </linearGradient>
               
-              <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="rgba(230, 43, 30, 0.8)" />
-                <stop offset="50%" stopColor="rgba(255, 215, 0, 0.9)" />
-                <stop offset="100%" stopColor="rgba(230, 43, 30, 0.8)" />
+              <linearGradient id="magicTextGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="rgba(230, 43, 30, 0.6)" />
+                <stop offset="50%" stopColor="rgba(255, 215, 0, 0.7)" />
+                <stop offset="100%" stopColor="rgba(230, 43, 30, 0.6)" />
               </linearGradient>
               
-              <linearGradient id="infinityGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="rgba(255, 215, 0, 0.8)" />
-                <stop offset="50%" stopColor="rgba(255, 140, 0, 1)" />
-                <stop offset="100%" stopColor="rgba(255, 215, 0, 0.8)" />
+              <radialGradient id="starRayGradientSubtle" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stopColor="rgba(255, 255, 255, 0.3)" />
+                <stop offset="30%" stopColor="rgba(255, 215, 0, 0.2)" />
+                <stop offset="100%" stopColor="rgba(255, 140, 0, 0.1)" />
+              </radialGradient>
+              
+              <linearGradient id="infinityGradientSubtle" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="rgba(255, 215, 0, 0.4)" />
+                <stop offset="50%" stopColor="rgba(255, 140, 0, 0.6)" />
+                <stop offset="100%" stopColor="rgba(255, 215, 0, 0.4)" />
               </linearGradient>
             </defs>
           </svg>
