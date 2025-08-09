@@ -9,7 +9,7 @@ interface TimeBasedTheme {
 
 export default function AdaptiveBackground() {
   const [currentTheme, setCurrentTheme] = useState<TimeBasedTheme>({
-    background: "from-gray-900 via-black to-gray-800",
+    background: "from-gray-900 via-black to-red-900",
     particles: "rgba(230, 43, 30, 0.3)",
     mood: "night"
   });
@@ -21,21 +21,21 @@ export default function AdaptiveBackground() {
       if (hour >= 6 && hour < 12) {
         // Morning (6 AM - 12 PM)
         setCurrentTheme({
-          background: "from-orange-200 via-red-300 to-pink-400",
+          background: "from-orange-400 via-yellow-500 to-red-500",
           particles: "rgba(255, 140, 0, 0.4)",
           mood: "morning"
         });
       } else if (hour >= 12 && hour < 18) {
         // Afternoon (12 PM - 6 PM)
         setCurrentTheme({
-          background: "from-blue-300 via-indigo-400 to-purple-500",
+          background: "from-blue-400 via-sky-500 to-purple-600",
           particles: "rgba(59, 130, 246, 0.4)",
           mood: "afternoon"
         });
       } else if (hour >= 18 && hour < 22) {
         // Evening (6 PM - 10 PM)
         setCurrentTheme({
-          background: "from-purple-600 via-red-500 to-orange-600",
+          background: "from-purple-700 via-red-600 to-orange-700",
           particles: "rgba(230, 43, 30, 0.5)",
           mood: "evening"
         });
@@ -50,22 +50,22 @@ export default function AdaptiveBackground() {
     };
 
     updateTheme();
-    const interval = setInterval(updateTheme, 60000); // Update every minute
+    const interval = setInterval(updateTheme, 10000); // Update every 10 seconds for testing
     
     return () => clearInterval(interval);
   }, []);
 
   return (
     <motion.div 
-      className="fixed inset-0 z-0"
+      className={`fixed inset-0 z-0 bg-gradient-to-br ${currentTheme.background}`}
       data-testid="adaptive-background"
-      animate={{
-        background: `linear-gradient(135deg, ${currentTheme.background.split(' ').join(', ')})`
-      }}
+      key={currentTheme.mood}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       transition={{ duration: 2, ease: "easeInOut" }}
     >
       {/* Magic Hat Background Design - Exact recreation with subtle lighting */}
-      <div className="absolute inset-0 flex items-center justify-center opacity-30">
+      <div className="absolute inset-0 flex items-center justify-center opacity-15">
         <motion.div
           className="relative"
           initial={{ scale: 0, opacity: 0 }}
@@ -235,9 +235,14 @@ export default function AdaptiveBackground() {
         </motion.div>
       </div>
 
+      {/* Time indicator */}
+      <div className="absolute top-4 left-4 text-white/30 text-sm" data-testid="time-indicator">
+        {currentTheme.mood} mode • {new Date().getHours()}:00
+      </div>
+
       {/* Floating Sparkles */}
       <div className="absolute inset-0">
-        {[...Array(8)].map((_, i) => (
+        {[...Array(6)].map((_, i) => (
           <motion.div
             key={`sparkle-${i}`}
             className="absolute w-1 h-1 rounded-full"
@@ -247,12 +252,12 @@ export default function AdaptiveBackground() {
               left: `${Math.random() * 100}%`,
             }}
             animate={{
-              y: [-20, 20, -20],
-              opacity: [0.3, 0.8, 0.3],
-              scale: [1, 1.5, 1],
+              y: [-15, 15, -15],
+              opacity: [0.2, 0.6, 0.2],
+              scale: [0.8, 1.2, 0.8],
             }}
             transition={{
-              duration: 4 + Math.random() * 4,
+              duration: 5 + Math.random() * 3,
               repeat: Infinity,
               ease: "easeInOut",
               delay: Math.random() * 2,
